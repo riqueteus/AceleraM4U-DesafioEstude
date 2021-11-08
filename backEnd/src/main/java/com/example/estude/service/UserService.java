@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public abstract class UserService {
+public class UserService {
     @Autowired
     private IUserRepository iUserRepository;
 

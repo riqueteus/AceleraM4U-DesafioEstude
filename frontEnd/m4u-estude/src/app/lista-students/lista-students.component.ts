@@ -14,8 +14,8 @@ export class ListaStudentsComponent implements OnInit {
   constructor(private service: StudentsService) { }
 
   ngOnInit(): void {
-    this.service.todos().subscribe((students: StudentComponent[])=> {
-      console.table(students)
+    this.service.todos().subscribe((students: any[])=> {
+      console.log(students)
       this.students = students;
     })
   }

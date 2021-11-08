@@ -1,5 +1,7 @@
 package com.example.estude.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 
@@ -8,7 +10,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idAdress;
+    private Integer id;
     @Column(nullable=false)
     private String country;
     @Column(nullable=false)
@@ -17,17 +19,14 @@ public class Address {
     private String state;
     @Column(nullable=false)
     private String street;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "student_id")
-    private Student student;
 
 
     public Integer getIdAddress() {
-        return idAdress;
+        return id;
     }
 
     public void setIdAddress(Integer idAdress) {
-        this.idAdress = idAdress;
+        this.id = idAdress;
     }
 
     public String getCountry() {

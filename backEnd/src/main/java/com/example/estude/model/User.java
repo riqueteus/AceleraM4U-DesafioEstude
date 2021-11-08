@@ -1,6 +1,7 @@
 package com.example.estude.model;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,15 +13,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idUser;
 
-    @NotNull
+    @NotNull @UniqueElements
     private String username;
 
     @NotNull
     @Length(min = 4 , max = 8)
     private String password;
 
-    @OneToOne
-    private Student student;
 
     public Integer getIdUser() {
         return idUser;

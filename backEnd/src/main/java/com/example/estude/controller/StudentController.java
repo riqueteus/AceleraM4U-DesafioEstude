@@ -1,10 +1,12 @@
 package com.example.estude.controller;
 
 import com.example.estude.model.Student;
-import com.example.estude.repository.IStudentRepository;
 import com.example.estude.service.StudentService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -21,8 +23,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-
-   @GetMapping
+    @GetMapping
     public List<Student> list(String name) {
         if(name == null) {
             return studentService.all();
@@ -30,6 +31,22 @@ public class StudentController {
             return studentService.findBy(name);
         }
     }
+
+    /*
+   @GetMapping
+    public Page<Student> list(@RequestParam(required = false) String name,
+                              @PageableDefault(sort = "id", direction = Sort.Direction.DESC, page = 0)
+                                Pageable paginacao) {
+        if(name == null) {
+            Page<Student> pageStudents = studentService.findByPage(paginacao);
+            return pageStudents;
+        } else {
+            Page<Student> pageStudents = studentService.findBy(name, paginacao);
+            return pageStudents;
+        }
+    }
+
+     */
 
 
     @GetMapping("/{id}")
@@ -45,7 +62,7 @@ public class StudentController {
     @PostMapping
     public ResponseEntity<Student> addStudent(@RequestBody @Valid Student student, UriComponentsBuilder builder) {
        final Student savedStudent = studentService.save(student);
-       final URI uri = builder.path("/students/{id}").buildAndExpand(savedStudent.getIdStudent()).toUri();
+       final URI uri = builder.path("/students/{id}").buildAndExpand(savedStudent.getId()).toUri();
 
        return ResponseEntity.created(uri).body(student);
     }
@@ -55,7 +72,7 @@ public class StudentController {
        Optional<Student> optional = studentService.findById(id);
 
        if(optional.isPresent() ) {
-           student.setIdStudent(id);
+           student.setId(id);
            Student updatedDtudent = studentService.save(student);
            return ResponseEntity.ok(updatedDtudent);
        }else {

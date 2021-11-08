@@ -1,5 +1,6 @@
 package com.example.estude.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -9,27 +10,49 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table(name="student")
 public class Student {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer idStudent;
+    private Integer id;
     @NotNull @NotEmpty @Length(min = 3, max = 200)
     private String name;
     @NotEmpty @Length(min = 6, message = "Deve possuir no minimo 9 digitos")
     private String email;
 
     private Integer age;
-    @OneToMany( fetch = FetchType.EAGER, mappedBy = "student")
-    private List<Address> adresses;
 
+    @OneToMany( targetEntity = Address.class, cascade = CascadeType.ALL)
+    @JoinColumn(name="student_fk", referencedColumnName = "id")
+    private List<Address> addresses;
 
-    public Integer getIdStudent() {
-        return idStudent;
+    @OneToOne(cascade= CascadeType.ALL)
+    @JoinColumn(name = "user_fk")
+    private User user;
+
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setIdStudent(Integer idStudent) {
-        this.idStudent = idStudent;
+    public void setAddresses(List<Address> adresses) {
+        this.addresses = adresses;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer idStudent) {
+        this.id = idStudent;
     }
 
     public String getName() {
@@ -61,11 +84,11 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(idStudent, student.idStudent);
+        return Objects.equals(id, student.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idStudent);
+        return Objects.hash(id);
     }
 }
