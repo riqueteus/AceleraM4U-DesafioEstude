@@ -2,7 +2,7 @@
 
 Implementação do desafio, proposto pelo treinamento Acelera M4U, que consiste na implementação de um sistema Back-End que gerencia os usuários da plataforma de cursos da empresa fictícia ESTUDE.
 
-Projeto desenvolvido no Acelera M4U da Gama Academy.Uma API Rest contendo o backend em Spring Boot e frontend em Angular.
+Uma API Rest contendo o backend em Spring Boot e frontend em Angular.
 
 Tecnologias utilizadas:
 Java:JDK 11
