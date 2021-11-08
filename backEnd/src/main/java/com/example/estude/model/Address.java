@@ -23,12 +23,11 @@ public class Address {
 
 
     public Integer getIdAddress() {
-
         return id;
     }
 
-    public void setIdAddress(Integer idAdress) {
-        this.id = idAdress;
+    public void setIdAddress(Integer id) {
+        this.id = id;
     }
 
 
