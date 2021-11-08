@@ -14,8 +14,11 @@ import { UserComponent } from './user/user.component';
 import { AddressComponent } from './address/address.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ManagementComponent } from './management/management.component';
 import { FormsModule } from '@angular/forms';
 import { ListaStudentsComponent } from './lista-students/lista-students.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { ListaStudentsComponent } from './lista-students/lista-students.componen
     StudentComponent,
     UserComponent,
     AddressComponent,
+    ManagementComponent,
     ListaStudentsComponent
+
   ],
   imports: [
     BrowserModule,

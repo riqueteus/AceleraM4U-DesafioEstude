@@ -15,7 +15,7 @@ export class ListaStudentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.todos().subscribe((students: any[])=> {
-      console.log(students)
+      console.table(students)
       this.students = students;
     })
   }

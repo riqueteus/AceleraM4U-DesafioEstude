@@ -35,11 +35,4 @@ public class UserService {
     public void remove( Integer id) {
         iUserRepository.deleteById(id);
     }
-
-
-
-
-
-
-
 }

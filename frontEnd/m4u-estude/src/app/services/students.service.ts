@@ -21,7 +21,7 @@ get students() {
   return this.studentsList;
 }
 
-adicionar(student: StudentComponent): Observable<StudentComponent> {
+adicionar(student: any): Observable<any> {
   this.studentsList.push(student)
 
   return this.httpClient.post<StudentComponent>(this.url, student)

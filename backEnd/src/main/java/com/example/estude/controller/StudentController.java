@@ -72,9 +72,15 @@ public class StudentController {
        Optional<Student> optional = studentService.findById(id);
 
        if(optional.isPresent() ) {
+<<<<<<< HEAD
            student.setId(id);
            Student updatedDtudent = studentService.save(student);
            return ResponseEntity.ok(updatedDtudent);
+=======
+           student.setIdStudent(id);
+           Student updatedStudent = studentService.save(student);
+           return ResponseEntity.ok(updatedStudent);
+>>>>>>> 4a8dd375de1bc98d30e8952d62c97e0407432687
        }else {
            return ResponseEntity.notFound().build();
        }
