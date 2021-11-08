@@ -22,11 +22,6 @@ public class Student {
     private String email;
 
     private Integer age;
-<<<<<<< HEAD
-=======
-    @OneToMany( fetch = FetchType.EAGER, mappedBy = "student")
-    private List<Address> address;
->>>>>>> 4a8dd375de1bc98d30e8952d62c97e0407432687
 
     @OneToMany( targetEntity = Address.class, cascade = CascadeType.ALL)
     @JoinColumn(name="student_fk", referencedColumnName = "id")
