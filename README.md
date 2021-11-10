@@ -1,32 +1,36 @@
 # AceleraM4U-DesafioEstude
 
-Implementação do desafio, proposto pelo treinamento Acelera M4U, que consiste na implementação de um sistema Back-End que gerencia os usuários da plataforma de cursos da empresa fictícia ESTUDE.
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/80941389/141118677-81c41c59-9497-4760-a90b-e4301b5b9c41.png" width="500px" />
+</div>
 
-Uma API Rest contendo o backend em Spring Boot e frontend em Angular.
+<b>Implementação do desafio, proposto pelo treinamento Acelera M4U, que consiste na implementação de um sistema Back-End que gerencia os usuários da plataforma de cursos da empresa fictícia ESTUDE.
 
-Tecnologias utilizadas:
-Java:JDK 11
-Mysql:8
-Postman
+Uma API Rest contendo o backend em Spring Boot e frontend em Angular. </b>
 
-Angular: CLI 12
-Biblioteca Angular Material 12
-Biblioteca Font Awesome 0.10.0
+<b>Tecnologias utilizadas:<br> </b>
+Java:JDK 11<br>
+Mysql:8<br>
+Postman<br>
+Angular: CLI 12<br>
+Biblioteca Angular Material 12<br>
+Biblioteca Font Awesome 0.10.0<br>
 
 
-Acesso a API-Backend
-localhost:8080
-localhost:8080/students
-localhost:8080/users
-localhost:8080/address
+<b> Acesso a API-Backend<br> </b>
+localhost:8080<br>
+localhost:8080/students<br>
+localhost:8080/users<br>
+localhost:8080/address<br>
 
-Acesso ao Frontend 
-ng serve -o
-localhost:4200
+<b>
+Acesso ao Frontend <br> </b>
+ng serve -o <br>
+localhost:4200 <br>
 
-Grupo 4:
-Mateus Henrique dos Santos
-Millene Faria da Silva
-Tatyane Araújo
-Valdinéia da Silva
+<b> <br> Grupo 4: <br>  </b>
+Mateus Henrique Silva dos Santos<br>
+Millene Faria da Silva<br>
+Tatyane Araújo<br>
+Valdinéia da Silva<br>
 Vitor Maverick Fonseca Santos
