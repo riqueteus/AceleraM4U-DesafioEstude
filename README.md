@@ -1,7 +1,7 @@
 # AceleraM4U-DesafioEstude
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/80941389/141118677-81c41c59-9497-4760-a90b-e4301b5b9c41.png" width="500px" />
+  <img src="https://user-images.githubusercontent.com/80941389/141118677-81c41c59-9497-4760-a90b-e4301b5b9c41.png" width="400px" />
 </div>
 
 <b>Implementação do desafio, proposto pelo treinamento Acelera M4U, que consiste na implementação de um sistema Back-End que gerencia os usuários da plataforma de cursos da empresa fictícia ESTUDE.
